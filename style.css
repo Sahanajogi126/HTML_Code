@@ -1,32 +1,37 @@
-body{
-background-color:powderblue;
-}
-h2{
-color:navy;
-font-size:55px;
-}
-p{
-color:red;text-align:center;font-size=18px;
-}
-div p{
-background-color:yellow;
+body {
+    background-color: powderblue;
 }
 
-img{
-opacity:0.2;
+h2 {
+    color: navy;
+    font-size: 55px;
 }
 
-div img{
-opacity:1.0;
+p {
+    color: red;
+    text-align: center;
+    font-size: 18px; /* fixed syntax */
 }
 
-a:lower{
-background-color:yellow;
-font-size:30px;
-
+div p {
+    background-color: yellow;
 }
 
-#para1{
-text-align:center;
-color:red;
+img {
+    opacity: 0.2;
 }
+
+div img {
+    opacity: 1.0;
+}
+
+a {
+    background-color: yellow;
+    font-size: 30px;
+}
+
+#para1 {
+    text-align: center;
+    color: red;
+}
+
