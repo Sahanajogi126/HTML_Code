@@ -1,140 +1,193 @@
-
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>News page</title>
-<style>
+  <meta charset="utf-8" />
+  <title>News page</title>
+  <style>
 
-body
-{
-font-family : 'Georgia' , serif;
-line-height:1.6;
-color:#333;
-max-width:1200px;
-margin:0 auto;
-padding:20px;
-background-color:#f4f4f4;
-}
+  body
+  {
+    font-family : 'Georgia' , serif;
+    line-height:1.6;
+    color:#333;
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+    background-color:#f4f4f4;
+  }
 
-header{
-background-color:#1a1a1a;
-color:#fff;
-padding:20px;
-text-align:center;
-}
-header h1{
-margin:0;
-font-size:2.5em;
-}
- 
+  header{
+    background-color:#1a1a1a;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+  }
+  header h1{
+    margin:0;
+    font-size:2.5em;
+  }
+   
+  article h2{
+    color:#444;
+    font-size:1.8em;
+  }
+  article
+  {
+    background-color: #fff;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    border-radius:8px;
+  }
 
-article h2{
-color:#444;
-font-size:1.8em;
-}
-article
-{
-background-color: #fff;
-padding:20px;
-margin-bottom:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-section
-{
-flex:2;
-margin-right: 20px;
-}
-main
-{
-display :flex;
-margin-top:20px;
-}
-aside
-{
-flex:1;
-background-color:yellow;
-padding:20px;
-box-shadow:0 0 10px rgba (0,0,0,0.1);
-}
+  /* Breaking news special style */
+  .breaking {
+    background-color: skyblue;
+    color: #111;
+    border-left: 6px solid #0077b6;
+  }
+  .breaking h2 {
+    color: #003366;
+    font-weight: bold;
+  }
 
-figure
-{
-margin=0;
-text-align:center;
-}
-figure img{
-max-width:100%;
-height:auto;
-}
-Figcaption{
-font-style: italic;
-color:#666;
-font-size:0.9em;
-}
+  section
+  {
+    flex:2;
+    margin-right: 20px;
+  }
+  main
+  {
+    display :flex;
+    margin-top:20px;
+  }
+  aside
+  {
+    flex:1;
+    background-color: lightpink; /* changed from yellow */
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1); /* fixed spacing */
+    color: #222; /* darker text for good contrast */
+    border-radius:8px;
+  }
 
+  figure
+  {
+    margin: 0; /* fixed syntax */
+    text-align:center;
+  }
+  figure img{
+    max-width:100%;
+    height:auto;
+    border-radius:6px;
+  }
+  figcaption{
+    font-style: italic;
+    color:#666;
+    font-size:0.9em;
+  }
 
-</style>
+  /* small table improvements */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+  }
+  th, td{
+    padding:8px 10px;
+    text-align:left;
+    border-bottom:1px solid #eaeaea;
+  }
+  th{
+    background:#fafafa;
+  }
+
+  /* nav styling */
+  nav ul{
+    list-style:none;
+    padding:0;
+    margin:12px 0;
+    display:flex;
+    gap:12px;
+  }
+  nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:600;
+  }
+
+  footer{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+  }
+
+  </style>
+</head>
 <body>
-<header>
-<h1>Daily news</h1>
-</header>
-<nav>
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#">POLITICS</a></li>
-<li><a href="#">TECHNOLOGY</a></li>
-<li><a href="#">SPORTS</a></li>
-<li><a href="#">ENTERTAINMENT</a></li>
-</ul>
-</nav>
-</body>
-<main>
-<section>
-<article>
-<h2>Breaking News:Major Technological Breakthrough</h2>
-<p>Scientists have announced a groundbreaking discovery in the field of quantum computing, potentially revolutionzing the tech industry.</p>
+  <header>
+    <h1>Daily news</h1>
+  </header>
 
+  <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">POLITICS</a></li>
+      <li><a href="#">TECHNOLOGY</a></li>
+      <li><a href="#">SPORTS</a></li>
+      <li><a href="#">ENTERTAINMENT</a></li>
+    </ul>
+  </nav>
 
-</article>
-<article>
-<h2>Local Sports Team Wins Championship</h2>
-<p>In a thrilling match,our local team secured victory in the national championship, bringing pride to our city</p>
+  <main>
+    <section>
+      <article class="breaking">
+        <h2>Breaking News: Major Technological Breakthrough</h2>
+        <p>Scientists have announced a groundbreaking discovery in the field of quantum computing, potentially revolutionzing the tech industry.</p>
+      </article>
 
-<figure>
-<img src="https://tse3.mm.bing.net/th/id/OIP.RUo2HlIjpXcRECqMc98DNAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
-<figcaption>
-India defeated Pakistan to clinch the Asia Cup 2025 trophy at the Dubai International Cricket Stadium on Sunday, September 28.
-</figcaption>
-</figure>
+      <article>
+        <h2>Local Sports Team Wins Championship</h2>
+        <p>In a thrilling match, our local team secured victory in the national championship, bringing pride to our city</p>
 
-<table>
-<tr>
-<th>Team</th>
-<th>Score</th>
-</tr>
-<tr>
-<td>Local Heroes</td>
-<td>3</td>
-</tr>
-<tr>
-<td>Visiting Challengers</td>
-<td>2</td>
-</tr>
-</table>
-</article>
-</section>
-<aside>
-<h3>Weather Update</h3>
-<p>Expect sunny skies with a high of 75°F(24°C)today</p>
-<h3>Upcoming Events</h3>
-<ul>
-<li>City Festival-This weekend</li>
-<li>Tech Conference-Next Month</li>
-<li>Charity Run -In Two Weeks</li>
-</ul>
-</aside>
-</main>
-<footer>
-<p>&copy:2023 The Daily Chronicle.All rights reserved</p>
-</footer>
+        <figure>
+          <img src="https://tse3.mm.bing.net/th/id/OIP.RUo2HlIjpXcRECqMc98DNAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cricket match">
+          <figcaption>
+            India defeated Pakistan to clinch the Asia Cup 2025 trophy at the Dubai International Cricket Stadium on Sunday, September 28.
+          </figcaption>
+        </figure>
+
+        <table>
+          <tr>
+            <th>Team</th>
+            <th>Score</th>
+          </tr>
+          <tr>
+            <td>Local Heroes</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Visiting Challengers</td>
+            <td>2</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Weather Update</h3>
+      <p>Expect sunny skies with a high of 75°F (24°C) today</p>
+      <h3>Upcoming Events</h3>
+      <ul>
+        <li>City Festival - This weekend</li>
+        <li>Tech Conference - Next Month</li>
+        <li>Charity Run - In Two Weeks</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy;2025 The Daily Chronicle. All rights reserved</p>
+  </footer>
 </body>
 </html>
