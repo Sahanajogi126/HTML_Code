@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    .calculator h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .button-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .button-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .button-column button {
+      padding: 12px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #1976d2;
+      color: white;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .button-column button:hover {
+      background-color: #1565c0;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number" />
+    <input type="number" id="num2" placeholder="Enter second number" />
+    <div class="button-grid">
+      <div class="button-column">
+        <button onclick="calculate('sum')">Sum</button>
+        <button onclick="calculate('product')">Product</button>
+        <button onclick="calculate('difference')">Difference</button>
+        <button onclick="calculate('quotient')">Quotient</button>
+      </div>
+      <div class="button-column">
+        <button onclick="calculate('remainder')">Remainder</button>
+        <button onclick="calculate('power')">Power</button>
+        <button onclick="calculate('square')">Square</button>
+        <button onclick="calculate('sqrt')">Square Root</button>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+
+      switch (operation) {
+        case "sum":
+          result = num1 + num2;
+          break;
+        case "product":
+          result = num1 * num2;
+          break;
+        case "difference":
+          result = num1 - num2;
+          break;
+        case "quotient":
+          result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+          break;
+        case "remainder":
+          result = num2 !== 0 ? num1 % num2 : "Cannot divide by zero";
+          break;
+        case "power":
+          result = Math.pow(num1, num2);
+          break;
+        case "square":
+          result = `Square of ${num1}: ${num1 ** 2}, Square of ${num2}: ${num2 ** 2}`;
+          break;
+        case "sqrt":
+          result = `√${num1}: ${Math.sqrt(num1)}, √${num2}: ${Math.sqrt(num2)}`;
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      document.getElementById("result").innerText = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
