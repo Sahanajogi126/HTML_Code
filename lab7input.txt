@@ -53,5 +53,6 @@ Noam,40,Denmark
   }
 ]
 Create Hash from String
-Enter text to hash
+Web is amazing
  Generate Hash
+Hash: 0924715f72b5364e75c28ac35c9fb3d6a650295fd34ee99693199ff007635aac
