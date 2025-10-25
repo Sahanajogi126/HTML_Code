@@ -1,0 +1,57 @@
+JSON and Data Manipulation
+Convert JSON Text to JavaScript Object
+{
+"name":"ABC",
+"age":30,
+"email":"abc@gmail.com",
+"isStudent":false
+}
+
+ Convert to Object
+{
+  "name": "ABC",
+  "age": 30,
+  "email": "abc@gmail.com",
+  "isStudent": false
+}
+Convert JSON Date Text to JavaScript Date Object
+{"date":"2025-02-25T12:00:00Z"}
+ Convert to Date
+Date Object: Tue Feb 25 2025 17:30:00 GMT+0530 (India Standard Time)
+
+Convert JSON to CSV and CSV to JSON
+[
+{"name":"Alice","age":28,"city":"NewYark"},
+{"name":"Bob","age":30,"city":"India"},
+{"name":"Noam","age":40,"city":"Denmark"}
+]
+ JSON to CSV
+name,age,city
+Alice,28,NewYark
+Bob,30,India
+Noam,40,Denmark
+name,age,city
+Alice,28,NewYark
+Bob,30,India
+Noam,40,Denmark
+ CSV to JSON
+[
+  {
+    "name": "Alice",
+    "age": "28",
+    "city": "NewYark"
+  },
+  {
+    "name": "Bob",
+    "age": "30",
+    "city": "India"
+  },
+  {
+    "name": "Noam",
+    "age": "40",
+    "city": "Denmark"
+  }
+]
+Create Hash from String
+Enter text to hash
+ Generate Hash
