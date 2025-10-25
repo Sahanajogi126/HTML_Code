@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Script Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    p, ul, div {
+      margin: 10px 0;
+      padding: 10px;
+    }
+    ul {
+      list-style-type: square;
+    }
+    .box-container {
+      display: flex;
+      gap: 20px;
+    }
+    .box, .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: #f4f4f4;
+    }
+    .box2 {
+      background-color: #d4edda;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h2>Append Content</h2>
+  <p id="para">This is an existing paragraph</p>
+  <ul id="list">
+    <li style="color:#FF5733; font-family:'Courier New'; font-weight:bold;">Item 1</li>
+    <li style="color:#33FF57; font-family:'Georgia'; font-weight:bold;">Item 2</li>
+  </ul>
+  <button id="appendBtn">Append Content</button>
+
+  <h2>Animate Elements</h2>
+  <div class="box-container">
+    <div class="box" id="animateBox1"></div>
+    <div class="box2" id="animateBox2"></div>
+  </div>
+  <button id="animateBtn">Animate Box 1</button>
+  <button id="animateBtn2">Animate Box 2</button>
+
+  <script>
+    $(document).ready(function() {
+      let itemCount = $('#list li').length;
+      const maxItems = 5;
+
+      $('#appendBtn').click(() => {
+        if (itemCount >= maxItems) return;
+
+        itemCount++;
+
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A8', '#FFD700', '#00CED1', '#8A2BE2', '#FF7F50'];
+        const fonts = ['Courier New', 'Georgia', 'Verdana', 'Comic Sans MS', 'Trebuchet MS', 'Lucida Console', 'Tahoma', 'Impact'];
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const font = fonts[Math.floor(Math.random() * fonts.length)];
+
+        $('#para').append(` Appended text ${itemCount}`);
+
+        const $newItem = $(`<li>Item ${itemCount}</li>`);
+        $newItem.css({
+          'color': color,
+          'font-family': font,
+          'font-weight': 'bold'
+        });
+
+        $('#list').append($newItem);
+
+        if (itemCount >= maxItems) {
+          $('#appendBtn').prop('disabled', true);
+        }
+      });
+
+      $('#animateBtn').click(() => {
+        $('#animateBox1')
+          .css({
+            width: '100px',
+            height: '100px',
+            'background-color': '#f4f4f4'
+          })
+          .animate({
+            width: '150px',
+            height: '150px'
+          }, 500, function() {
+            $(this).css('background-color', 'lightblue');
+          });
+      });
+
+      $('#animateBtn2').click(() => {
+        $('#animateBox2')
+          .css({
+            width: '100px',
+            height: '100px',
+            'background-color': '#d4edda'
+          })
+          .animate({
+            width: '150px',
+            height: '150px'
+          }, 500, function() {
+            $(this).css('background-color', '#a1e3b3');
+          });
+      });
+    });
+  </script>
+</body>
+</html>
